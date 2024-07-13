@@ -32,7 +32,6 @@ export default function App() {
       <Route path = "/home" element = {<Home />}/>
       <Route path = "/about" element = {<About/>}/>
       <Route path ="*" element = {<NotFound/>}/>
-
     </Routes>
     </HashRouter>
     </>
