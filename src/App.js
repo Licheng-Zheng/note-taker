@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import { HashRouter, Routes, Route} from 'react-router-dom';
 //since we want to use the router we need to import the BrowserRouter, Routes, and Route from react-router-dom
 //and since all the pages are also part of the router dom,  we gotta import that too.
 import Home from './pages/home';
@@ -19,8 +19,12 @@ export default function App() {
     //The browserROuter uses the HTML5 history API to keep your UI in sync with the URL.
     //They must work in tandem to provide a full  Single Page Application ( SPA )experience.
     // The path with a star indicates all the paths that are not defined in the routes..
+    //Grouping them together as Routes also only let the url match one of routes in them.
+    //On github pages, note that it cannot store browser history like our local server.  Everytime you click a url, it will try to find the page in the repository.
+    //and if not it will return a 404.   Front-end routing ( the action of syncing the UI with the URL ) does not work for this case, because of the different links that host gh-pages.
+    //The solution is to use HashRouter instead of BrowserRouter.  The code will look for the Hash of the URL instead of the URL, which stays constant for both local servers and github pages, unlike the urls.
     <>
-    <BrowserRouter>
+    <HashRouter>
     <Routes>
       <Route path = '/notes' element = {<Notes/>}/>
       <Route path = '/notes/:id' element = {<Actual/>}/>
@@ -30,7 +34,7 @@ export default function App() {
       <Route path ="*" element = {<NotFound/>}/>
 
     </Routes>
-    </BrowserRouter>
+    </HashRouter>
     </>
   );
 }
