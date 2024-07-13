@@ -1,0 +1,9 @@
+.container{
+   display:flexbox; 
+   width: 20%; 
+   padding: 20px; 
+}
+.containdocs{
+    display:flex;
+    flex-direction: row;
+}
