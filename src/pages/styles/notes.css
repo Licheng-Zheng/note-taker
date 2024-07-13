@@ -5,5 +5,18 @@
 }
 .containdocs{
     display:flex;
+    justify-content: space-around;
     flex-direction: row;
+}
+.notetitles{
+    margin-bottom:10vh;
+}
+.average{
+    border: none;
+    border-radius:0.5vh;
+    color: black;
+    background-color: rgba(197, 197, 197, 0.507);
+}
+.average:hover{
+    background-color: #f0f0f0;
 }

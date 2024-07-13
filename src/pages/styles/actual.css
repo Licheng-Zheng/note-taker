@@ -1,0 +1,20 @@
+.free{
+width:100vw;
+height:100vh;
+}
+.container{
+    display:flex;
+    justify-content: space-around;
+    padding-top: 10vh;
+    padding-bottom:0.5vh;
+    width:100%;
+}
+.special{
+    border: none;
+    border-radius:0.5vh;
+    color: black;
+    background-color: #05eb37;
+}
+.special:hover{
+    background-color:rgba(8, 228, 0, 0.507);
+}
