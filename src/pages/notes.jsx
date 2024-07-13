@@ -7,6 +7,7 @@ function Documents({NameNotes, Content}){
     <h3>{NameNotes}</h3>
     <button>Edit</button>
     <button>Delete</button>
+    <button>Share URL</button>
     </div>    </>
     );
 }

@@ -31,6 +31,7 @@ export default function App() {
       <Route index element ={<Home />}/>
       <Route path = "/home" element = {<Home />}/>
       <Route path = "/about" element = {<About/>}/>
+      <Route path = "/actual" element = {<Actual/>}/>
       <Route path ="*" element = {<NotFound/>}/>
     </Routes>
     </HashRouter>
