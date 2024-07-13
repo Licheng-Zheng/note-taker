@@ -1,0 +1,32 @@
+
+.background{
+    /* background-color: blue; */
+    height:135vh;
+
+}
+.body{
+    height:100vh;
+}
+h1{
+    text-align:center;
+}
+p{
+    text-align: center;
+    color: rgba(0, 0, 0, 0.39);
+}
+#title{
+    padding-top:20vh;
+}
+#start{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+}
+#start:hover{
+    background-color: #e0e0e0;
+}

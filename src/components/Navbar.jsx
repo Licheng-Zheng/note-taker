@@ -5,17 +5,17 @@ export default function NavBar() {
   return (
     <>
   <nav>
-    <ul>
-    <li>
-                 <Link to="/" className = "link">Home</Link>
-             </li>
-             <li>
-                 <Link to="/about" className = "link">About</Link>
-             </li>
-             <li>
-                 <Link to="/notes" className = "link">Your Notes</Link>
-             </li>
-         </ul>
+    <div className="navcontainer">
+     <div className= "containtitle">
+     <Link to="/" className = "link"> <h3>Notetaker</h3></Link>
+     </div>
+     <div className= "linkcontainer">
+     <Link to="/about" className = "link">About</Link>
+     </div>
+     <div className= "linkcontainer">
+     <Link to="/notes" className = "link">Your Notes</Link>
+     </div>
+    </div>
   </nav>
   </>
   );
