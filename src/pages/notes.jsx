@@ -1,5 +1,8 @@
 import NavBar from '../components/Navbar'; 
 import '../pages/styles/notes.css';
+import '../config/firebase.js'; // Add this line prevent firebase not loading error
+import { getFirestore, addDoc, collection, getDocs, doc, getDoc,updateDoc} from "firebase/firestore"; 
+
 
 function Documents({NameNotes, Content}){
     return(
@@ -13,14 +16,46 @@ function Documents({NameNotes, Content}){
     );
 }
  function Templates({Name}){
-
+    const db = getFirestore();
+const handleClick = async () => {
+    if(Name === "Cornell-Notes"){
+        console.log('Cornell Notes Template');
+        const docRef = await addDoc(collection(db,"document"),{
+            type: "cornell"
+        })
+        window.open('#/notes/'+docRef.id,'_self');
+        //1st parameter is the URL, 2nd parameter is the url it will start with in the new tab.
+    }
+    if(Name==="Outline-Notes"){
+        console.log('Outline Notes Template');
+        const docRef = await addDoc(collection(db,"document"),{
+            type: "outline"
+        })
+        window.open('#/notes/'+docRef.id,'_self');
+        //1st parameter is the URL, 2nd parameter is the url it will start with in the new tab.
+    }
+    if(Name==="Free-Notes"){
+        console.log('Free Notes');
+        const docRef = await addDoc(collection(db,"document"),{
+            type: "free"
+        })
+        window.open('#/notes/'+docRef.id,'_self');
+        //1st parameter is the URL, 2nd parameter is the url it will start with in the new tab.
+        }
+}
     return(
     <>
     <div className = "container">
     <h3>{Name}</h3>
-    <button className = 'average'>Use Template</button>
-    </div>
+        <TemplateButton Press = {handleClick}/>
+</div>
     </>
+    );
+ }
+
+ function TemplateButton({Press}){
+    return(
+        <button className='average' onClick = {Press}>Use Template</button>
     );
  }
 function  ContainerDocument(){

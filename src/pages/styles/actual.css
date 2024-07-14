@@ -18,3 +18,39 @@ height:100vh;
 .special:hover{
     background-color:rgba(8, 228, 0, 0.507);
 }
+
+.entry {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 60vh;
+    margin: 0 auto; /* Add this line */
+    flex-wrap:wrap;
+}
+.containersum{
+    display: flex;
+    justify-content: center;
+    padding-top:0;
+    width:100vw;
+    height:40vh;
+
+}
+.containertitle{
+    display:flex;
+    justify-content: center;
+    padding-top:10vh;
+    width:100vw;
+    height:10vh;
+}
+#main {
+    flex: 3;
+}
+#questions {
+    flex: 1;
+}
+#summary {
+    flex: 1;
+}
+#title{
+   flex:1; 
+}
