@@ -2,6 +2,24 @@
 /*
 First bunch is mostly the CSS for the Cornell taking method.
 */
+.save{
+display:flex;
+justify-content: center;
+
+}
+.usefulcontain{
+    display:flex;
+    justify-content: center;
+}
+.useful{
+border:none;
+background-color: #007bff;
+color: white;
+padding: 10px 20px;
+/* border-radius: 5px; */
+font-size: 16px;
+cursor: pointer;
+}
 .free{
 width:100vw;
 height:100vh;
@@ -42,7 +60,7 @@ height:100vh;
 .containertitle{
     display:flex;
     justify-content: center;
-    padding-top:10vh;
+    padding-top:0vh;
     width:100vw;
     height:10vh;
 }
@@ -56,7 +74,29 @@ height:100vh;
     flex: 1;
 }
 #title{
-   flex:1; 
+    padding:0;
+   font-size:20px;
+   height:10vh;
+   width:100vw;
+}
+#save{
+    border:none;
+    background-color: #03d353;
+    color: white;
+    padding: 10px 20px;
+    /* border-radius: 5px; */
+    font-size: 16px;
+    cursor: pointer;
+    width:100vw;
+
+}
+#plus{
+    flex:1;
+    width:50vw;
+}
+#fetch{
+    flex:1;
+    width:50vw;
 }
 
 

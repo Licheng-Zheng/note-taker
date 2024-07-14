@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar'
 import './styles/home.css';
+import {Link} from 'react-router-dom';
 
 
 function Steps({step, description}){
@@ -27,7 +28,7 @@ export default function Home(){
                 <h1 id ='title'>Create.    Collaborate.    Win.</h1>
                 </div>
                   <p>Note taker oriented towards easy collaboration between students-to-students and students-to-teachers.</p>
-                <button id='start'>Get Started</button>
+               <Link to = '/notes'> <button id='start' ahref = '/notes'>Get Started</button></Link>
             </div>
             <div className='body'>
             <div className ='problem'>

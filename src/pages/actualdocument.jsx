@@ -39,14 +39,14 @@ function Entry({title, questions, content, summary,id, onSave}){
   function Plus({onplusclick}){
     return(
       <div className='plus'>
-      <button id='plus' onClick={onplusclick} >+</button>
+      <button className = 'useful' id='plus' onClick={onplusclick} >+</button>
       </div>
     );
   }
   function Save({onClick}){
     return (
       <div className='save'>
-      <button id ='save' onClick={onClick}>Save</button>
+      <button className = 'useful'id ='save' onClick={onClick}>Save</button>
       </div>
     )
     
@@ -127,9 +127,10 @@ fetchDataFromFirestore();
 
 return (
   <>
-
-  <button onClick={handleFetch}>Fetch</button>
-  <Plus onplusclick={handleClick}/>
+<div className = "usefulcontain">
+    <button className = 'useful' id = 'fetch'onClick={handleFetch}>Fetch</button>
+    <Plus onplusclick={handleClick}/>
+    </div>  
   {currentArray.map( (item, index) => (
     <Entry onSave = {handleSave} title ={item.title} questions={item.questions} content={item.content} summary ={item.summary} id={item.id}/>
        )
