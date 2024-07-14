@@ -23,6 +23,15 @@ const handleClick = async () => {
         const docRef = await addDoc(collection(db,"document"),{
             type: "cornell"
         })
+        const collectionRef = doc(db, "document", docRef.id);
+        const subcollectionRef = collection(collectionRef, "entries");
+
+        const docRef2 = await addDoc(subcollectionRef, {
+            title: "Add a date and/or an unique title.",
+            questions: "Add your questions here.",
+            content: "Add your main notes here.",
+            summary: "Summarize here."
+        });
         window.open('#/notes/'+docRef.id,'_self');
         //1st parameter is the URL, 2nd parameter is the url it will start with in the new tab.
     }

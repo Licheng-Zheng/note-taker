@@ -3,7 +3,6 @@ import '../config/firebase.js';
 import './styles/actual.css';
 import React, { useState} from 'react';
 import { getFirestore, addDoc, collection, getDocs, doc, getDoc,updateDoc} from "firebase/firestore"; 
-
 import {useParams} from 'react-router-dom';
 function Entry({title, questions, content, summary,id, onSave}){
     const [inputTitle, setTitle] = useState(title);
@@ -54,9 +53,11 @@ function Entry({title, questions, content, summary,id, onSave}){
     }
   
 
-export default function ActualDocument({NameDoc, Content}){
-const params = useParams();
-console.log(params);
+export default function ActualDocument(){
+const temp= useParams();
+const params = temp.id;
+
+
 let [storedValues, setStoredValues] = useState([]);
 const[currentArray, setCurrentArray] = useState(storedValues);  
 
@@ -72,18 +73,19 @@ const addBlankEntry = async () => {
   //console.log("Document written with ID: ", docRef.id);
 }
 
-const getDataType = async () => {
-  const docRef = doc(db, "document", params);
-  const docSnap = await getDoc(docRef);
+// const getDataType = async () => {
+//   const docRef = doc(db, "document", {params});
+//   const docSnap = await getDoc(docRef);
 
-  if (docSnap.exists()) {
-      // console.log("Document data:", docSnap.data().type);
-      return docSnap.data().type;
-  } else {
-      // doc.data() will be undefined in this case
-      // console.log("No such document!");
-  }
-}
+//   if (docSnap.exists()) {
+//      console.log("Document data:", docSnap.data().type);
+//       return docSnap.data().type;
+//   } else {
+//       // doc.data() will be undefined in this case
+//       // console.log("No such document!");
+//   }
+// }
+
 const fetchDataFromFirestore = async () => {
   const querySnapshot = await getDocs(collection(db, "document",params,"entries"));
   const temporaryArr = [];
@@ -101,11 +103,12 @@ setCurrentArray(temporaryArr);
   });
 };
 
+
 function handleClick(){
 addBlankEntry();
 alert("Created!");
 }
-const handleSave=async(id, title, questions, content, summary)=>{
+const handleSave= async(id, title, questions, content, summary)=>{
 const docRef = doc(db,"document",params,"entries",id);
 updateDoc(docRef, {
   title: title,
