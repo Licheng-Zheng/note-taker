@@ -56,7 +56,7 @@ function Entry({title, questions, content, summary,id, onSave}){
 export default function ActualDocument(){
 const temp= useParams();
 const params = temp.id;
-
+const typeDoc='';
 
 let [storedValues, setStoredValues] = useState([]);
 const[currentArray, setCurrentArray] = useState(storedValues);  
@@ -74,7 +74,7 @@ const addBlankEntry = async () => {
 }
 
 // const getDataType = async () => {
-//   const docRef = doc(db, "document", {params});
+//   const docRef = doc(db, "document", params);
 //   const docSnap = await getDoc(docRef);
 
 //   if (docSnap.exists()) {
@@ -93,6 +93,7 @@ const fetchDataFromFirestore = async () => {
       temporaryArr.push({...doc.data(),id:doc.id});
   });
   setStoredValues(temporaryArr);
+ //typeDoc =  getDataType();
   console.log("success");
   // temporaryArr.forEach((item) => {
   //   console.log(item.order);
@@ -123,6 +124,7 @@ fetchDataFromFirestore();
 
 }
 
+
 return (
   <>
 
@@ -134,6 +136,7 @@ return (
     )}
   </>
 );
+
 
 
 }
