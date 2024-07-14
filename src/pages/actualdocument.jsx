@@ -1,5 +1,7 @@
 import NavBar from '../components/Navbar'
 import './styles/actual.css';
+import {useParams} from 'react-router-dom';
+
 function Save(){
     return (
         <button className='special'>Save</button>
@@ -12,6 +14,8 @@ function ShareUrl(){
 
 }
 export default function ActualDocument({NameDoc, Content}){
+const params = useParams();
+console.log(params);
 return (
     <div>
         <NavBar />
